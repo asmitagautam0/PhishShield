@@ -5,7 +5,7 @@ import ClientLayout from "../components/ClientLayout";
 
 export const metadata = {
   title: "Phishing Email Detection System",
-  description: "Rule-based phishing detection (ML planned)",
+  description: "Rule-based and ML-based phishing detection",
 };
 
 export default function RootLayout({ children }) {

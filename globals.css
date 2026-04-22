@@ -41,6 +41,7 @@ body {
   text-decoration: none;
   color: #a7b3cc;
   font-weight: 600;
+  gap:50px;
 }
 
 .nav-links a.active {

@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <p>© {new Date().getFullYear()} Phishing Email Detection System</p>
-        <p className="muted">Keep yourself and your surroundings phish free</p>
+        <p className="muted">Be aware of hackers</p>
       </div>
     </footer>
   );

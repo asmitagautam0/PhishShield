@@ -3,43 +3,48 @@
 import { useState } from "react";
 
 export default function HeaderForm({ onAnalyze, onClear }) {
-  const [headerText, setHeaderText] = useState("");
+  const [emailText, setEmailText] = useState("");
   const [error, setError] = useState("");
 
   function handleAnalyze() {
     setError("");
-    if (!headerText.trim()) {
-      setError("Please paste the email header before analyzing.");
+
+    if (!emailText.trim()) {
+      setError("Please paste the full email message before analyzing.");
       return;
     }
-    onAnalyze({ headerText });
+
+    onAnalyze({ emailText });
   }
 
   function handleClear() {
-    setHeaderText("");
+    setEmailText("");
     setError("");
     onClear();
   }
 
   return (
     <div className="card">
-      <h2>Email Analyzer</h2>
-      <p className="muted">Paste full email header or email text and click Analyze.</p>
+      <h2>Email Analyser</h2>
 
       <div className="field">
-        <label>Email Header *</label>
+        <label>Paste full email message (header + body)</label>
         <textarea
-          rows="14"
-          value={headerText}
-          onChange={(e) => setHeaderText(e.target.value)}
-          placeholder="Paste email header here..."
+          rows="16"
+          value={emailText}
+          onChange={(e) => setEmailText(e.target.value)}
+          placeholder="Paste the complete email here..."
+          style={{
+            resize: "none",
+            width: "100%",
+          }}
         />
       </div>
 
       {error ? <p className="error">{error}</p> : null}
 
       <div style={{ display: "flex", gap: "10px", marginTop: "12px" }}>
-        <button onClick={handleAnalyze}>Analyze</button>
+        <button onClick={handleAnalyze}>Analyse</button>
         <button
           onClick={handleClear}
           style={{ background: "#1d2a44", border: "1px solid #22304a" }}
